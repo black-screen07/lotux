@@ -1,0 +1,61 @@
+$breakpoint:(
+    "xs": 0,
+    "sm": 480px,
+    "md": 720px,
+    "lg": 960px,
+    "xl": 1200px,
+);
+
+@mixin xs{
+    @media(min-width: map-get($breakpoint, "xs")){
+        @content
+    }
+};
+
+@mixin sm{
+    @media(min-width: map-get($breakpoint, "sm")){
+        @content
+    }
+};
+
+@mixin md{
+    @media(min-width: map-get($breakpoint, "md")){
+        @content
+    }
+};
+
+@mixin lg{
+    @media(min-width: map-get($breakpoint, "lg")){
+        @content
+    }
+};
+
+@mixin xl{
+    @media(min-width: map-get($breakpoint, "lg")){
+        @content
+    }
+};
+
+@mixin breakpoint($bp: 0){
+    @media (min-width: $bp){
+        @content;
+    }
+}
+
+.reponsive-test{
+    @include xs {
+        color: rgb(89, 234, 186);
+    }
+    @include sm {
+        color: rgb(246, 56, 167);
+    }
+    @include lg {
+        color: rgb(38, 32, 32);
+    }
+    @include md {
+        color: rgb(161, 157, 39);
+    }
+    @include xl {
+        color: rgb(180, 116, 244);
+    }
+}

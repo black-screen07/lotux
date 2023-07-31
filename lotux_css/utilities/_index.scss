@@ -1,0 +1,174 @@
+@each $key, $val in $palet_numbers{
+    .p-#{$key}{
+      padding: $val;
+    }
+    .pt-#{$key}{
+      padding: $val;
+    }
+    .pr-#{$key}{
+      padding: $val;
+    }
+    .pb-#{$key}{
+      padding: $val;
+    }
+    .pl-#{$key}{
+      padding: $val;
+    }
+    @each $key2, $val2 in $colors{
+      .border-#{$key}-#{$key2}{
+        border: $val solid $val2;
+      }
+    }
+}
+  
+  @each $key, $val in $vh_numbers{
+    .mb-#{$key}{
+      margin-bottom: $val;
+    }
+    .mt-#{$key}{
+      margin-top: $val;
+    }
+  }
+  @each $key, $val in $width_numbers{
+    .mr-#{$key}{
+      margin-right: $val;
+    }
+    .ml-#{$key}{
+      margin-left: $val;
+    }
+  }
+
+  @each $key, $val in $palet_numbers{
+    .rd-#{$key}{
+        border-radius: $val;
+    }
+  }
+
+.shad{
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.19);
+}
+
+//height values
+@each $key, $val in $vh_numbers{
+  .vh-#{$key}{
+    height: $val;
+  }
+}
+
+//width vw values
+@each $key, $val in $vw_numbers{
+  .vw-#{$key}{
+    height: $val;
+  }
+}
+
+//width width values
+@each $key, $val in $width_numbers{
+  .w-#{$key}{
+    width: $val;
+    box-sizing: border-box;
+  }
+}
+
+//positionnement
+$potion_horizontal: right, left;
+$potion_vertical: top, bottom;
+
+@each $val in $potion_horizontal{
+  @each $key, $width in $width_numbers{
+    .pos\:relative-#{$val}-#{$key}{
+      position: relative;
+      @if($val=='right'){
+        right:$width;
+      }@else{
+        left: $width;
+      }
+    }
+  }
+}
+@each $val in $potion_horizontal{
+  @each $key, $width in $width_numbers{
+    .pos\:absolute-#{$val}-#{$key}{
+      position: absolute;
+      @if($val=='right'){
+        right:$width;
+      }@else{
+        left: $width;
+      }
+    }
+  }
+}
+@each $val in $potion_vertical{
+  @each $key, $vh in $vh_numbers{
+    .pos\:relative-#{$val}-#{$key}{
+      position: relative;
+      @if($val=='top'){
+        top:$vh;
+      }@else{
+        bottom: $vh;
+      }
+    }
+  }
+}
+@each $val in $potion_vertical{
+  @each $key, $vh in $vh_numbers{
+    .pos\:absolute-#{$val}-#{$key}{
+      position: absolute;
+      @if($val=='top'){
+        top:$vh;
+      }@else{
+        bottom: $vh;
+      }
+    }
+  }
+}
+
+.pos\:absolute{
+  position: absolute;
+}
+.pos\:relative{
+  position: relative;
+}
+.pos\:fixed{
+  position: fixed;
+}
+
+@for $i from 0 through 99{
+  .z\:x-#{$i}{
+    z-index: $i;
+  }
+}
+
+$layout-values: flex-start, flex-end, center, space-between, space-around;
+@each $val in $layout-values{
+  .flex\:#{$val}{
+    display: flex;
+    justify-content: $val;
+  }
+}
+
+.border\:none{
+  border: none;
+}
+
+//component custom design
+.flow-y{
+  overflow-y: scroll;
+}
+
+.pretty-flow::-webkit-scrollbar {
+  width: 10px;
+}
+.pretty-flow::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+.pretty-flow::-webkit-scrollbar-thumb {
+  background: $base_grey;
+  border-radius: 100px;
+}
+
+.no-outline{
+  outline: none;
+}
+
+

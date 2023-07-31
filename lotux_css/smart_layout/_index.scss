@@ -1,0 +1,90 @@
+/* Styles de base pour le conteneur et les éléments */
+.smart-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start; /* Pour empiler les éléments en cas de taille réduite */
+}
+
+.smart-layout.child\:border\:none > .ltx-box{
+  border: none;
+}
+
+.ltx-box {
+  box-sizing: border-box;
+  padding: 10px; /* Espacement par défaut, vous pouvez le personnaliser si nécessaire */
+  border: 1px solid #ccc;
+  flex: 1 0 100%; /* Propriétés flex pour la flexibilité des éléments */
+}
+
+@media (min-width: 0) {
+  .ltx-box {
+    flex: 1 0 calc(100% - 20px); /* 1 élément par ligne à partir de 0px */
+    margin: 5px; /* Espacement entre les éléments */
+  }
+}
+
+/* Media Queries pour ajuster le Smart Layout en fonction des tailles d'écran */
+@media (min-width: 768px) {
+  .ltx-box {
+    flex: 1 0 calc(50% - 20px); /* Deux éléments par ligne à partir de 768px */
+    margin: 5px; /* Espacement entre les éléments */
+  }
+}
+
+@media (min-width: 1024px) {
+  .ltx-box {
+    flex: 1 0 calc(25% - 20px); /* Quatre éléments par ligne à partir de 1024px */
+    margin: 5px; /* Espacement entre les éléments */
+  }
+}
+
+.ltx-box.dragged-over {
+  border: 2px dashed #666;
+}
+
+
+/* Animation de fondu enchaîné lorsque les éléments apparaissent */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease forwards; /* Durée et timing de l'animation */
+}
+
+/* Ajoutez la classe .fade-in aux éléments lorsque la page se charge */
+@keyframes fadeInDelay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.smart-layout.fade-in-delay .ltx-box {
+  opacity: 0;
+  animation: fadeInDelay 0.8s ease forwards; /* Durée et timing de l'animation */
+}
+
+.smart-layout.fade-in-delay .ltx-box:nth-child(1) {
+  animation-delay: 0.1s; /* Décalage de 0.1s pour le premier élément */
+}
+
+.smart-layout.fade-in-delay .ltx-box:nth-child(2) {
+  animation-delay: 0.2s; /* Décalage de 0.2s pour le deuxième élément */
+}
+
+.smart-layout.fade-in-delay .ltx-box:nth-child(3) {
+  animation-delay: 0.3s; /* Décalage de 0.3s pour le troisième élément */
+}
+
+.smart-layout.fade-in-delay .ltx-box:nth-child(4) {
+  animation-delay: 0.4s; /* Décalage de 0.4s pour le quatrième élément */
+}

@@ -1,0 +1,14 @@
+$font-postion: center, right, left, justify, start, end;
+
+@each $key, $val in $font-postion{
+    .text-#{$key}{
+        text-align: $key;
+    }
+}
+
+@for $i from 1 through 20{
+    .text-size-#{$i}{
+        font-size: calc($base_font_size * $i);
+    }
+}
+
