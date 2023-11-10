@@ -1,0 +1,279 @@
+//positionnement
+$horizontal_val: right, left;
+$vertical_val: top, bottom;
+
+$font-postion: center, right, left, justify, start, end;
+
+@each $key, $val in $font-postion{
+    .text-align\:#{$key}{
+        text-align: $key;
+    }
+}
+
+@for $i from 1 through 100{
+    .text-size-#{$i}{
+        font-size: calc($base_font_size * $i);
+    }
+}
+
+@each $key, $val in $pixel_numbers{
+    .p-#{$key}{
+      padding: $val;
+    }
+    .p\:t-#{$key}{
+      padding-top: $val;
+    }
+    .p\:r-#{$key}{
+      padding-right: $val;
+    }
+    .p\:b-#{$key}{
+      padding-bottom: $val;
+    }
+    .p\:l-#{$key}{
+      padding-left: $val;
+    }
+    @each $key2, $val2 in $colors{
+      .border-#{$key}-#{$key2}{
+        border: $val solid $val2;
+      }
+    }
+    .rd-#{$key}{
+      border-radius: $val;
+    }
+    @each $v_val in $vertical_val{
+      @each $h_val in $horizontal_val{
+        .rd\:#{$v_val}-#{$h_val}-#{$key}{
+         @if($v_val=='top' and $h_val=='left'){
+          border-top-left-radius: $val;
+         }
+         @if($v_val=='top' and $h_val=='right'){
+          border-top-right-radius: $val;
+         }
+         @if($v_val=='bottom' and $h_val=='left'){
+          border-bottom-left-radius: $val;
+         }
+         @if($v_val=='bottom' and $h_val=='right'){
+          border-bottom-right-radius: $val;
+         }
+        }
+      }
+    }
+
+    .w\:px-#{$key}{
+     width: $val;
+    }
+    .h\:px-#{$key}{
+      height: $val;
+     }
+}
+  
+  @each $key, $val in $vh_numbers{
+    .m\:b-#{$key}{
+      margin-bottom: $val;
+    }
+    .m\:t-#{$key}{
+      margin-top: $val;
+    }
+  }
+  @each $key, $val in $width_numbers{
+    .m\:r-#{$key}{
+      margin-right: $val;
+    }
+    .m\:l-#{$key}{
+      margin-left: $val;
+    }
+  }
+
+  .m-auto{
+    margin: auto;
+  }
+
+.shad{
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.19);
+}
+
+@each $key, $val in $vh_numbers{
+  .vh-#{$key}{
+    height: $val;
+  }
+}
+
+@each $key, $val in $vw_numbers{
+  .vw-#{$key}{
+    height: $val;
+  }
+}
+
+@each $key, $val in $width_numbers{
+  .w-#{$key}{
+    width: $val !important;
+    box-sizing: border-box;
+  }
+  .bg-img\:size-#{$key}{
+    background-size: $val;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .rd\:w-#{$key}{
+    border-radius: $val;
+  }
+}
+
+.border-none{
+  border: none;
+}
+.outline-none{
+  outline: none;
+}
+.border-box{
+  box-sizing: border-box;
+}
+.content-box{
+ box-sizing: content-box;
+}
+
+.bg-img{
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+}
+
+.pos-absolute{
+  position: absolute;
+}
+.pos-relative{
+  position: relative;
+}
+.pos-fixed{
+  position: fixed;
+}
+
+.pos-sticky{
+  position: sticky;
+}
+
+@each $val in $horizontal_val{
+  @each $key, $width in $width_numbers{
+    .pos-relative\:#{$val}-#{$key}{
+      position: relative;
+      @if($val=='right'){
+        right:$width;
+      }@else{
+        left: $width;
+      }
+    }
+    .pos-absolute\:#{$val}-#{$key}{
+      position: absolute;
+      @if($val=='right'){
+        right:$width;
+      }@else{
+        left: $width;
+      }
+    }
+    .pos-fixed\:#{$val}-#{$key}{
+      position: fixed;
+      @if($val=='right'){
+        right:$width;
+      }@else{
+        left: $width;
+      }
+    }
+    .pos-sticky\:#{$val}-#{$key}{
+      position: sticky;
+      @if($val=='right'){
+        right:$width;
+      }@else{
+        left: $width;
+      }
+    }
+  }
+}
+
+@each $val in $vertical_val{
+  @each $key, $vh in $vh_numbers{
+    .pos-relative\:#{$val}-#{$key}{
+      position: relative;
+      @if($val=='top'){
+        top:$vh;
+      }@else{
+        bottom: $vh;
+      }
+    }
+    .pos-absolute\:#{$val}-#{$key}{
+      position: absolute;
+      @if($val=='top'){
+        top:$vh;
+      }@else{
+        bottom: $vh;
+      }
+    }
+    .pos-fixed\:#{$val}-#{$key}{
+      position: fixed;
+      @if($val=='top'){
+        top:$vh;
+      }@else{
+        bottom: $vh;
+      }
+    }
+    .pos-sticky\:#{$val}-#{$key}{
+      position: sticky;
+      @if($val=='top'){
+        top:$vh;
+      }@else{
+        bottom: $vh;
+      }
+    }
+  }
+}
+
+@for $i from 0 through 99{
+  .z-index-#{$i}{
+    z-index: $i;
+  }
+}
+
+@each $key, $val in $pixel_numbers{
+  .gap-#{$key} > * {
+      margin: $val;
+  }
+}
+
+.space{
+  width: 100%;
+  box-sizing: border-box;
+}
+.flex-wrap{
+  display: flex;
+  flex-flow: row wrap;
+  box-sizing: border-box;
+}
+.flex{
+  display: flex;
+}
+.align-i\:center{
+  display: flex;
+  align-items: center;
+}
+.flex-dir\:col{
+  display: flex;
+  flex-direction: column;
+}
+.flex-dir\:col-reverse{
+  display: flex;
+  flex-direction: column-reverse;
+}
+.flex-dir\:row{
+  display: flex;
+  flex-direction: row;
+}
+.flex-dir\:row-reverse{
+  display: flex;
+  flex-direction: row-reverse;
+}
+$layout-values: flex-start, flex-end, center, space-between, space-around, space-evenly, stretch;
+@each $val in $layout-values{
+  .justify\:#{$val}{
+    display: flex;
+    justify-content: $val;
+  }
+}

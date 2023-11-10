@@ -1,0 +1,151 @@
+.ltx-form{
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+    
+  .submit-button:hover {
+    background-color: #522d80;
+  }
+
+  .field-input-container {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    display: flex; 
+    align-items: center; 
+  }
+  
+  .field-input-container input {
+    font-weight: 700;
+  }
+  
+  .field-indicator {
+    position: absolute;
+    right: 0;
+    top: 0; 
+    bottom: 0; 
+    margin: auto 0; 
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #522d80;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+    
+.ltx-btn {
+  background-color: #3a1c71;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+//////////////input file///////////////////
+
+.file-input-container {
+  display: flex;
+  align-items: center;
+}
+
+.input-file {
+  display: none;
+}
+
+.file-label {
+  cursor: pointer;
+  background-color: #3a1c71;
+  color: #FFF;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.file-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.image-preview-container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  opacity: 0; 
+  transform: translateY(-10px); 
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.image-preview.show { /* Class for showing the preview */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.image-thumbnail {
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.delete-button {
+  margin-top: 5px;
+  background-color: #FF0000;
+  color: #FFF;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s ease; /* Transition property for the delete button */
+}
+
+.delete-button:hover {
+  opacity: 1;
+}
+

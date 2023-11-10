@@ -1,0 +1,53 @@
+.smart-layout{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  .grid-auto div{
+      width: 100%;
+      box-sizing: border-box;
+      flex: 1 0 100%; 
+  }
+}
+
+.ltx-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start; /* Pour empiler les éléments en cas de taille réduite */
+}
+.ltx-layout > * {
+  box-sizing: border-box;
+  padding: 10px; 
+  border: 1px solid #ccc;
+  flex: 1 0 100%; 
+}
+.ltx-layout:nth-child(1).child\:border\:none{
+  border: none;
+}
+
+.ltx-box {
+  box-sizing: border-box;
+  padding: 10px; 
+  flex: 1 0 100%; 
+}
+
+@media (min-width: 0) {
+  .ltx-layout > *{
+    flex: 1 0 calc(100% - 20px); /* 1 élément par ligne à partir de 0px */
+    margin: 5px; /* Espacement entre les éléments */
+  }
+}
+
+@media (min-width: 768px) {
+  .ltx-layout > *{
+    flex: 1 0 calc(50% - 20px); /* Deux éléments par ligne à partir de 768px */
+    margin: 5px; /* Espacement entre les éléments */
+  }
+}
+
+@media (min-width: 1024px) {
+  .ltx-layout > *{
+    flex: 1 0 calc(25% - 20px); /* Quatre éléments par ligne à partir de 1024px */
+    margin: 5px; /* Espacement entre les éléments */
+  }
+}
+

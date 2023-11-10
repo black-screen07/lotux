@@ -1,0 +1,54 @@
+@each $key, $val in $colors {
+   .text-#{$key}{
+     color: $val
+   }
+   .bg-#{$key}{
+    background-color: $val;
+   }
+   .text-#{$key}{
+    a{
+     color: $val;
+    }
+   }
+   .dotted-#{$key}{
+    border: 2px dotted $val;
+   }
+   @for $i from 1 through 20{
+    .dotted-#{$i}-#{$key}{
+      border: 5px dotted $val;
+     }
+   }
+   .hover-#{$key}{
+    &:hover{
+      background-color: $val;
+    }
+   }
+   .htext-#{$key}{
+    &:hover{
+      color: $val;
+    }
+   }
+   .border-#{$key}{
+    border: $base_border_thickness solid $val;
+   }
+
+   @each $key, $val in $colors{
+    @each $key2, $val2 in $colors{
+        .bg\:grad-#{$key}-#{$key2}{
+            background: linear-gradient(45deg, $val, $val2); 
+        } 
+    }
+}
+
+   .pretty-flow-#{$key}::-webkit-scrollbar {
+    width: 10px;
+  }
+  .pretty-flow-#{$key}::-webkit-scrollbar-track {
+      background-color: #fff;
+  }
+  .pretty-flow-#{$key}::-webkit-scrollbar-thumb {
+    background: $val;
+    border-radius: 100px;
+  }
+
+}

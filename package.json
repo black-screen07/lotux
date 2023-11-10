@@ -1,13 +1,13 @@
 {
   "name": "lotux",
-  "version": "1.0.0",
-  "description": "lotux is a css framework",
+  "version": "1.0.1",
+  "description": "Loutux CSS, is a powerful CSS framework that can help you build advanced user interfaces",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Egnin Aka Emmanuel Freddy",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-sass": "^5.1.0",

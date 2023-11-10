@@ -1,0 +1,36 @@
+// Variables pour personnalisation
+$banner-bg-color: #3498db;
+$banner-text-color: #ffffff;
+$banner-padding: 20px;
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $banner-bg-color;
+  color: $banner-text-color;
+  padding: $banner-padding;
+  text-align: center;
+}
+
+.banner-title {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.banner-subtitle {
+  font-size: 1.5em;
+}
+
+// Exemple d'utilisation du composant
+.my-custom-banner {
+  @extend .banner;
+  background-color: #e74c3c;
+  color: #ffffff;
+  .banner-title {
+    font-size: 3em;
+  }
+  .banner-subtitle {
+    font-size: 1.8em;
+  }
+}

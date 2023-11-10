@@ -1,0 +1,13 @@
+{
+  "name": "lotux",
+  "version": "1.0.35",
+  "description": "lotux css is a powerful css framework to help you build an advanced and beautiful user interface",
+  "main": "index.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+  },
+  "author": "EGNIN AKA EMMANUEL FREDDY",
+  "license": "MIT"
+}

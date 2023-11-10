@@ -1,0 +1,99 @@
+@use 'sass:math';
+
+//@varcolor
+$base_grey:#a5a2a2;
+$primary: #3498db;
+$secondary: #e74c3c;
+$tertiary: #2ecc71;
+$accent: #f39c12;
+$background: #f5f5f5;
+
+$white: #ffffff;
+$black: #000000;
+
+$lightgray: #f0f0f0;
+$gray: #ccc;
+$darkgray: #888;
+
+$red: #ff0000;
+$green: #00ff00;
+$blue: #0000ff;
+$yellow: #ffff00;
+$orange: #ff6600;
+$purple: #800080;
+$pink: #ff00ff;
+
+$info: #3498db;
+$success: #2ecc71;
+$warning: #f39c12;
+$danger: #e74c3c;
+$dark: #333333;
+
+
+
+$colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "tertiary": $tertiary,
+  "accent": $accent,
+  "background": $background,
+  "white": $white,
+  "black": $black,
+  "lightgray": $lightgray,
+  "gray": $gray,
+  "darkgray": $darkgray,
+  "red": $red,
+  "green": $green,
+  "blue": $blue,
+  "yellow": $yellow,
+  "orange": $orange,
+  "purple": $purple,
+  "pink": $pink,
+  "info": $info,
+  "success": $success,
+  "warning": $warning,
+  "danger": $danger,
+  "dark": $dark,
+);
+
+
+//@base_measure
+$base_border_radius:20px;
+$base_font_size:0.25rem;
+$base_font_weignt:500;
+$base_padding:0.75rem;
+$base_margin:0.75rem;
+$base_border_thickness:1px;
+
+
+$number-value: 100;
+$number-value-px: 900;
+
+$pixel_numbers: ();
+@for $i from 0 through $number-value-px {
+  $valeur: $i * 1px; 
+  $pixel_numbers: map-merge($pixel_numbers, (#{$i}: $valeur)); 
+}
+
+$width_numbers: ();
+@for $i from 0 through $number-value {
+  $valeur: $i * 1%; 
+  $width_numbers: map-merge($width_numbers, (#{$i}: $valeur)); 
+}
+$vh_numbers: ();
+@for $i from 0 through $number-value {
+  $valeur: $i * 1vh; 
+  $vh_numbers: map-merge($vh_numbers, (#{$i}: $valeur)); 
+}
+$vw_numbers: ();
+@for $i from 0 through $number-value {
+  $valeur: $i * 1vw; 
+  $vw_numbers: map-merge($vw_numbers, (#{$i}: $valeur)); 
+}
+
+//@var_font_family
+$base_font_family:Arial, Helvetica, sans-serif;
+
+
+@debug map-get($colors, "primary");
+@debug map-has-key($colors, "primary");

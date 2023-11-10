@@ -1,0 +1,104 @@
+@use "sass:math";
+
+$grid-columns: 12;
+
+@include xs{
+    @for $i from 1 through $grid-columns{
+        .xs\:col-#{$i}{
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+        .xs\:grid-fr-#{$i}{
+          display: grid;
+          grid-template-columns: repeat($i, 1fr);
+          box-sizing: border-box;
+        }
+        .xs\:hide{
+          display: none;
+        }
+        .xs\:visible{
+          display: block;
+        }
+    }
+}
+@include sm{
+    @for $i from 1 through $grid-columns{
+        .sm\:col-#{$i}{ 
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+        .sm\:grid-fr-#{$i}{
+          display: grid;
+          grid-template-columns: repeat($i, 1fr);
+          box-sizing: border-box;
+        }
+        .sm\:hide{
+          display: none;
+        }
+        .sm\:visible{
+          display: block;
+        }
+    }
+}
+@include md{
+    @for $i from 1 through $grid-columns{
+        .md\:col-#{$i}{ 
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+        .md\:grid-fr-#{$i}{
+          display: grid;
+          grid-template-columns: repeat($i, 1fr);
+          box-sizing: border-box;
+        }
+        .md\:hide{
+          display: none;
+        }
+        .md\:visible{
+          display: block;
+        }
+    }
+}
+@include lg{
+    @for $i from 1 through $grid-columns{
+        .lg\:col-#{$i}{
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+        .lg\:grid-fr-#{$i}{
+          display: grid;
+          grid-template-columns: repeat($i, 1fr);
+          box-sizing: border-box;
+        }
+        .lg\:hide{
+          display: none;
+        } 
+        .lg\:visible{
+          display: block;
+        }
+    }
+}
+@include xl{
+    @for $i from 1 through $grid-columns{
+        .xl\:col-#{$i}{
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+        .xl\:grid-fr-#{$i}{
+          display: grid;
+          grid-template-columns: repeat($i, 1fr);
+          box-sizing: border-box;
+        }
+        .xl\:hide{
+          display: none;
+        }
+        .xl\:visible{
+          display: block;
+        }
+    }
+}
